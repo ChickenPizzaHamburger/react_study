@@ -1,0 +1,19 @@
+{
+    "food": [
+        {"id": 1, "name": "피자", "category": "양식"},
+        {"id": 2, "name": "햄버거", "category": "양식"},
+        {"id": 3, "name": "치킨", "category": "한식"},
+        {"id": 4, "name": "떡볶이", "category": "한식"},
+        {"id": 5, "name": "파스타", "category": "양식"},
+        {"id": 6, "name": "스테이크", "category": "양식"},
+        {"id": 7, "name": "탕수육", "category": "중식"},
+        {"id": 8, "name": "짜장면", "category": "중식"},
+        {"id": 9, "name": "짬뽕", "category": "중식"},
+        {"id": 10, "name": "탕수육", "category": "중식"},
+        {"id": 11, "name": "깐풍기", "category": "중식"},
+        {"id": 12, "name": "김밥", "category": "한식"},
+        {"id": 13, "name": "비빔밥", "category": "한식"},
+        {"id": 14, "name": "불고기", "category": "한식"},
+        {"id": 15, "name": "갈비탕", "category": "한식"}
+    ]
+}
