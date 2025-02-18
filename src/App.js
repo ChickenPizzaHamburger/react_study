@@ -2,20 +2,20 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 
 // import [컴포넌트 명] from '위치'
-import Test1 from './page/test1';
-import Test2 from './page/test2';
+import Test1 from './page/comp/test1';
+import Test2 from './page/comp/test2';
 
-import Signup from './page/signup';
-import Calc1 from './page/calc1';
-import Calc2 from './page/calc2';
+import Signup from './page/comp/signup';
+import Calc1 from './page/comp/calc1';
+import Calc2 from './page/comp/calc2';
 
-import Filter from './page/filter';
+import Filter from './page/comp/filter';
 
-import Comp1 from './page/comp1';
-import Comp2 from './page/comp2';
-import Comp3 from './page/comp3';
-import Comp4 from './page/comp4';
-import Comp5 from './page/comp5';
+import Comp1 from './page/comp/comp1';
+import Comp2 from './page/comp/comp2';
+import Comp3 from './page/comp/comp3';
+import Comp4 from './page/comp/comp4';
+import Comp5 from './page/comp/comp5';
 
 import DivTest1 from './page/test/test1';
 import DivTest2 from './page/test/test2';
@@ -28,13 +28,16 @@ import DivUser from './page/test/user';
 import DivDark from './page/test/darkmode';
 import DivScore from './page/test/score';
 
+import AxiosTest1 from './page/axios/axiosTest';
+import AxiosTest2 from './page/axios/axiosTest2';
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path={"/"} element={<Test1 />}></Route>
+          <Route path={"/"} element={<Start />}></Route>
           <Route path={"/study1"} element={<Test1 />}></Route>
           <Route path={"/study2"} element={<Test2 />}></Route>
 
@@ -61,10 +64,20 @@ function App() {
           <Route path={"/divUser"} element={<DivUser />}></Route>
           <Route path={"/divDark"} element={<DivDark />}></Route>
           <Route path={"/divScore"} element={<DivScore />}></Route>
+
+          <Route path={"/axiosTest1"} element={<AxiosTest1 />}></Route>
+          <Route path={"/axiosTest2"} element={<AxiosTest2 />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
+}
+
+function Start(){
+  return(
+    <main>
+    </main>
+  )
 }
 
 function Header(){
@@ -110,6 +123,9 @@ function Header(){
       <Link to="/divUser">DivUser 화면으로 이동</Link><br />
       <Link to="/divDark">DivDark 화면으로 이동</Link><br />
       <Link to="/divScore">DivScore 화면으로 이동</Link><br />
+
+      <Link to="/axiosTest1">AxiosTest1 화면으로 이동</Link><br />
+      <Link to="/axiosTest2">AxiosTest2 화면으로 이동</Link><br />
     </header>
   )
 }

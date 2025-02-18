@@ -1,6 +1,6 @@
 import {useState, useRef} from 'react';
-import hobbyJson from '../hobby.json';
-import foo from '../food.json';
+import hobbyJson from '../../hobby.json';
+import foo from '../../food.json';
 
 function App() {
 

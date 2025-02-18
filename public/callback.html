@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        진우님(); // 진우님 함수를 호출
+        function 진우님(){
+            alert('진우님 작업 진행'); // 1
+            미리작성(콜백함수); // 값만 넣었는데 함수도 호출 가능하다.
+        }
+
+        function 미리작성(후처리){
+            alert('미리 작성 before'); // 2
+
+            후처리();
+
+            alert('미리 작성 after'); // 4
+        }
+
+        function 콜백함수(){
+            alert(콜백함수); // 3
+        }
+    </script>
+</body>
+</html>
