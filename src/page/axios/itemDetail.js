@@ -1,4 +1,40 @@
-export default function Detail(props){
+import {useState, useEffect} from 'react';
+import axios from 'axios';
+
+export default function ItemDetail(props){
+
+    console.log(props.itemIdx)
+
+    const [name, setName] = useState('');
+    const [categoryName, setCategoryName] = useState('');
+    const [price, setPrice] = useState(0);
+    const [good, setGood] = useState(0);
+
+    function getDatail(){
+        axios.get('http://192.168.0.123:8080/api/item/find',
+            {params:{
+                itemIdx: props.itemIdx
+            }}
+        )
+        .then(res => {
+            console.log(res)
+            if(res.data.code == 200){
+                setName(res.data.data.name);
+                setCategoryName(res.data.data.categoryName);
+                setPrice(res.data.data.price);
+                setGood(res.data.data.good);
+            } else{
+                alert('해당 상품의 자세한 정보를 받는 중에 오류가 발생했습니다.')
+                console.log(res.msg);
+            }
+        })
+    }
+
+    // Load 역할
+    useEffect(() => {
+        getDatail();
+    }, [])
+
     return(
         <div>
             <div style={{ // 바깥 영역 클릭 못하게 div로 막는 형식
@@ -24,7 +60,10 @@ export default function Detail(props){
                     alignItems: 'center' // 컨텐츠 요소도 가운데
                 }}>
                     {/* 모달 창 안에 들어가는 요소 */}
-                    {props.detail}
+                    {name} <br />
+                    {categoryName} <br />
+                    {price} <br />
+                    {good} <br />
                 </div>
             </div>
         </div>

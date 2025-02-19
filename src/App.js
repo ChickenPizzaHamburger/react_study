@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
 
 // import [컴포넌트 명] from '위치'
@@ -30,6 +29,8 @@ import DivScore from './page/test/score';
 
 import AxiosTest1 from './page/axios/axiosTest';
 import AxiosTest2 from './page/axios/axiosTest2';
+
+import Itembox from './page/axios/itembox';
 
 function App() {
   return (
@@ -67,6 +68,8 @@ function App() {
 
           <Route path={"/axiosTest1"} element={<AxiosTest1 />}></Route>
           <Route path={"/axiosTest2"} element={<AxiosTest2 />}></Route>
+
+          <Route path={"/itembox"} element={<Itembox />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
@@ -126,6 +129,8 @@ function Header(){
 
       <Link to="/axiosTest1">AxiosTest1 화면으로 이동</Link><br />
       <Link to="/axiosTest2">AxiosTest2 화면으로 이동</Link><br />
+
+      <Link to="/itembox">Itembox 화면으로 이동</Link><br />
     </header>
   )
 }

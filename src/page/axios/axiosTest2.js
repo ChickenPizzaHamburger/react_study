@@ -2,8 +2,6 @@ import axios from 'axios';
 import {useState} from 'react';
 import Detail from './detailTest';
 
-
-
 export default function AxiosTest2(){
 
     const [areaList, setAreaList] = useState([]);
