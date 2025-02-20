@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import ItemInput from './itemInput';
 import ItemSearch from './itemSearch';
 import ItemDetail from './itemDetail';
+import ItemList from './itemList';
 import axios from 'axios';
 
 export default function Itembox(){
@@ -38,6 +39,7 @@ export default function Itembox(){
         .then(res => {
             if(res.data.code == 200){
                 alert('아이템이 추가되었습니다.')
+                getList();
             } else{
                 alert('아이템이 추가되지 않았습니다.')
                 console.log(res.msg);
@@ -99,19 +101,7 @@ export default function Itembox(){
             <div style={flexBox}><ItemInput textCss={textCss} handlerInput={handlerInput} /></div>
             <div style={{...flexBox, width: '100%', marginBottom: undefined}}><ItemSearch textCss={textCss} handlerSearch={handlerSearch} /></div>
             
-            <div style={{width: '100vw', display:'flex', flexWrap: 'wrap', gap: '20px', padding: '50px'}}>
-            {itemList.map(item => (
-                    <div key={item.itemIdx} style={{
-                        position: 'relative', width: '338px', height:'150px', 
-                        boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.4)', fontSize: '20px', fontWeight:'bold', padding: '10px'}}
-                        onClick={() => handlerDetail(item.itemIdx)}>
-                        <div style={{fontSize: '25px'}}>{item.name}</div>
-                        <div>{item.price.toLocaleString()}원</div>
-                        <div style={{position: 'absolute', bottom: '10px', padding: '10px'}}><span onClick={() => handlerLike(item.itemIdx)}>👍</span> {item.good}</div>
-                    </div>
-                ))}
-
-            </div>
+            <ItemList itemList={itemList} handlerDetail={handlerDetail} handlerLike={handlerLike} />
 
             {/* Detail을 상태 기반으로 렌더링 */}
             {datailId != null && (
