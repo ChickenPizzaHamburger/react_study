@@ -32,6 +32,10 @@ import AxiosTest2 from './page/axios/axiosTest2';
 
 import Itembox from './page/axios/itembox';
 
+import UseEffect1 from './page/useHock/useEffect1';
+
+import  Usecallback1 from './page/useHock/useCallback/Parent';
+
 function App() {
   return (
     <div className="App">
@@ -70,6 +74,9 @@ function App() {
           <Route path={"/axiosTest2"} element={<AxiosTest2 />}></Route>
 
           <Route path={"/itembox"} element={<Itembox />}></Route>
+
+          <Route path={"/useEffect1"} element={<UseEffect1 />}></Route>
+          <Route path={"/usecallback1"} element={<Usecallback1 />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
@@ -131,6 +138,9 @@ function Header(){
       <Link to="/axiosTest2">AxiosTest2 화면으로 이동</Link><br />
 
       <Link to="/itembox">Itembox 화면으로 이동</Link><br />
+
+      <Link to="/useEffect1">UseEffect1 화면으로 이동</Link><br />
+      <Link to="/usecallback1">Usecallback1 화면으로 이동</Link><br />
     </header>
   )
 }
