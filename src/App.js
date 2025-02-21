@@ -34,7 +34,14 @@ import Itembox from './page/axios/itembox';
 
 import UseEffect1 from './page/useHock/useEffect1';
 
-import  Usecallback1 from './page/useHock/useCallback/Parent';
+import Usecallback1 from './page/useHock/useCallback/Parent';
+import UseMemo1 from './page/useHock/useMemo/Memo1';
+
+import Reducer1 from './page/reducer1';
+import Reducer2 from './page/reducer2';
+
+import Redux1 from './page/redux1/index';
+
 
 function App() {
   return (
@@ -77,24 +84,31 @@ function App() {
 
           <Route path={"/useEffect1"} element={<UseEffect1 />}></Route>
           <Route path={"/usecallback1"} element={<Usecallback1 />}></Route>
+
+          <Route path={"/useMemo1"} element={<UseMemo1 />}></Route>
+
+          <Route path={"/reducer1"} element={<Reducer1 />}></Route>
+          <Route path={"/reducer2"} element={<Reducer2 />}></Route>
+
+          <Route path={"/redux1"} element={<Redux1 />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
 
-function Start(){
-  return(
+function Start() {
+  return (
     <main>
     </main>
   )
 }
 
-function Header(){
+function Header() {
 
   const movePage = useNavigate();
 
-  return(
+  return (
     <header style={{
       height: '600px',
       border: '3px solid red'
@@ -102,45 +116,52 @@ function Header(){
       <h1 style={{
         cursor: 'pointer'
       }}
-      onClick={
-        () => movePage('/')
-      }>Home으로 이동</h1>
+        onClick={
+          () => movePage('/')
+        }>Home으로 이동</h1>
       <Link to="/study1">연습용 1 화면으로 이동</Link>
       <input type="button" value="연습용2 이동" onClick={() => {
         movePage('/study2');
       }} /><br />
-      
+
       {/* 이동하는 형태 */}
       <Link to="/signup">Signup 화면으로 이동</Link><br />
-      <Link to="/calc1">Calc1 화면으로 이동</Link><br />
+      <Link to="/calc1">Calc1 화면으로 이동</Link>&nbsp;&nbsp;
       <Link to="/calc2">Calc2 화면으로 이동</Link><br />
 
       <Link to="/filter">Filter 화면으로 이동</Link><br />
 
-      <Link to="/comp1">Comp1 화면으로 이동</Link><br />
-      <Link to="/comp2">Comp2 화면으로 이동</Link><br />
-      <Link to="/comp3">Comp3 화면으로 이동</Link><br />
-      <Link to="/comp4">Comp4 화면으로 이동</Link><br />
+      <Link to="/comp1">Comp1 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/comp2">Comp2 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/comp3">Comp3 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/comp4">Comp4 화면으로 이동</Link>&nbsp;&nbsp;
       <Link to="/comp5">Comp5 화면으로 이동</Link><br />
 
-      <Link to="/divTest1">DivTest1 화면으로 이동</Link><br />
-      <Link to="/divTest2">DivTest2 화면으로 이동</Link><br />
-      <Link to="/divTest3">DivTest3 화면으로 이동</Link><br />
-      <Link to="/divTest4">DivTest4 화면으로 이동</Link><br />
-      <Link to="/divTest5">DivTest5 화면으로 이동</Link><br />
+      <Link to="/divTest1">DivTest1 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/divTest2">DivTest2 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/divTest3">DivTest3 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/divTest4">DivTest4 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/divTest5">DivTest5 화면으로 이동</Link>&nbsp;&nbsp;
       <Link to="/divTest6">DivTest6 화면으로 이동</Link><br />
 
-      <Link to="/divUser">DivUser 화면으로 이동</Link><br />
-      <Link to="/divDark">DivDark 화면으로 이동</Link><br />
+      <Link to="/divUser">DivUser 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/divDark">DivDark 화면으로 이동</Link>&nbsp;&nbsp;
       <Link to="/divScore">DivScore 화면으로 이동</Link><br />
 
-      <Link to="/axiosTest1">AxiosTest1 화면으로 이동</Link><br />
+      <Link to="/axiosTest1">AxiosTest1 화면으로 이동</Link>&nbsp;&nbsp;
       <Link to="/axiosTest2">AxiosTest2 화면으로 이동</Link><br />
 
       <Link to="/itembox">Itembox 화면으로 이동</Link><br />
 
-      <Link to="/useEffect1">UseEffect1 화면으로 이동</Link><br />
+      <Link to="/useEffect1">UseEffect1 화면으로 이동</Link>&nbsp;&nbsp;
       <Link to="/usecallback1">Usecallback1 화면으로 이동</Link><br />
+
+      <Link to="/useMemo1">UseMemo1 화면으로 이동</Link><br />
+
+      <Link to="/reducer1">Reducer1 화면으로 이동</Link>&nbsp;&nbsp;
+      <Link to="/reducer2">Reducer2 화면으로 이동</Link><br />
+
+      <Link to="/redux1">Redux1 화면으로 이동</Link><br />
     </header>
   )
 }
